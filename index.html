@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Programando I.A. desde o Rascunho</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+	<style>
+a{cursor:pointer;color:#88ff88;font-weight:bold;text-decoration:none;}
+b{color:#ffffff;font-size:18px;}
+body{font-family:Inter;background:#08121c;color:#e6eef6;margin:20px;}
+h1{margin:34px 0px -10px 0px;}
+h3{border-left:6px dashed #ffffff;padding-left:8px;font-size:24px;}
+header{display:flex;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;border:1px solid #262626;margin-bottom:30px;cursor:pointer;}
+option{background:#08121c;}
+select{background:rgba(255,255,255,0.03);border:1px solid #262626; color:#60a5ea;padding:10px;border-radius:6px;cursor:pointer;margin-left:12px;}
+.badge{background:rgba(255,255,255,0.04);padding:8px;margin-right:8px;border-radius:8px;font-size:12px;border:1px solid #262626;}
+.card{width:300px;padding:20px;margin-right:30px;margin-bottom:20px;display:inline-block;background:linear-gradient(90deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid #262626;border-radius:12px;}
+.card p{text-align:left;color:#9aa5b1;padding-bottom:10px;}
+.links{text-align:right;margin-right:-10px;}
+.links a{text-decoration:none;color:#60a5ea;background:rgba(96,165,250,0.06);padding:8px 20px;border-radius:8px;border:1px solid #262626;font-family:Courier;font-weight:bold;}
+.title{text-align:left;font-size:20px;border-bottom:1px solid #262626;padding-bottom:16px;display:flex;align-items:center;cursor:pointer;}
+#conteudo{font-family:Courier;}
+#home{background-color:#dedede;position:fixed;bottom:0px;right:20px;padding:18px;cursor:pointer;color:#000000;}
+#indice{margin-left:12px;line-height:23px;}
+#logo{background:linear-gradient(135deg,#5ed7a7,#4085da);width:72px;height:72px;border-radius:12px;display:grid;place-items:center;color:#042;font-family:Courier;font-weight:bold;font-size:30px;margin:30px;}
+#voltar{background-color:#dedede;position:fixed;bottom:0px;right:112px;padding:18px;cursor:pointer;color:#000000;}
+	</style>
+</head>
+
+<body>
+	<header onclick="location.href='index.html';"><div id=logo>IA</div><div><h1>Programando IA Desde o Rascunho</h1><p>Desde o zero. Tutorial prático sobre como começar.</p></div></header>
+	<div id=main></div>
+</body>
+
+<script>
+main='';
+lng=location.href.split('=')[1];
+if(location.href.split('=')[1])lng=location.href.split('=')[1].replace('&licao','');
+licao=false;
+if(location.href.split('=')[2])licao=location.href.split('=')[2].replace('licao&licao=','licao=');
+if(!lng){
+	main+="<select onchange=\"location.href=this.value;\">";
+	main+="<option value=index.html>Conheça o Tutorial</option>";
+	main+="<option value=index.html?lng=tinyCC>Usando o tinyCC</option>";
+	main+="<option value=index.html?lng=nodeJs>Usando o NodeJs</option>";
+	main+="<option value=index.html?lng=python>Usando Python</option>";
+	main+="</select><br><br>";
+	main+="<article class=card><div class=title onclick=\"location.href='index.html?lng=tinyCC';\"><span class=badge>C</span>Seguir usando o tinyCC</div><p>Tiny C Compiler (TCC ou tinyCC) é um compilador C pequeno. Ele é conhecido por ser leve e rápido.</p><div class=links><a href=index.html?lng=tinyCC>Tutorial</a> <a href=https://www.google.com/search?q=tinyCC+download target=_blank>Download</a></div></article>";
+	main+="<article class=card><div class=title onclick=\"location.href='index.html?lng=nodeJs';\"><span class=badge>JS</span>Seguir usando o Node.js</div><p>Node.js é um ambiente de desenvolvimento que permite que devs executem código javascript.</p><div class=links><a href=index.html?lng=nodeJs>Tutorial</a> <a href=https://www.google.com/search?q=nodeJs+download target=_blank>Download</a></div></article>";
+	main+="<article class=card><div class=title onclick=\"location.href='index.html?lng=python';\"><span class=badge>Py</span>Seguir usando o Python</div><p>Python é uma linguagem de programação com uma filosofia que enfatiza a legibilidade do código.</p><div class=links><a href=index.html?lng=python>Tutorial</a> <a href=https://www.google.com/search?q=python+download target=_blank>Download</a></div></article>";
+}else{
+	if(!licao){
+		main+="<div id=indice>";
+		main+="* <a href=index.html?lng="+lng+"&licao=1>Probleminha</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=2>Bias</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=3>Peso e Altura</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=4>Testes</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=5>Imagens</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=6>.bmp</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=7>Treinando a Rede</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=8>Teste Final</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=9>Generativa</a><br>";
+		main+="* <a href=index.html?lng="+lng+"&licao=10>Próximos Passos</a>";
+		main+="</div><br><br><center><select onchange=\"location.href=this.value;\">";
+		main+="<option value=index.html?lng=tinyCC"+(lng=="tinycc"?" selected":"")+">TinyCC</option>";
+		main+="<option value=index.html?lng=nodeJs"+(lng=="nodeJs"?" selected":"")+">NodeJs</option>";
+		main+="<option value=index.html?lng=python"+(lng=="python"?" selected":"")+">Python</option>";
+		main+="<option value=https://coboinashadow.github.io/tutoriais>Outros Tutoriais</option>";
+		main+="<option value=https://coboinashadow.github.io/Portfolio>Portfolio Dev</option>";
+		main+="</select></center><br><br><br>";
+		main+="<div id=disqus_thread></div><span id=voltar onclick=\"(document.head||document.body).appendChild(s);this.style.display='none';\">comentarios</span>";
+		disqus_config=function () {
+			this.page.url="https://coboinashadow.github.io/redeNeural/index.html?lng="+lng;
+			this.page.identifier="https://coboinashadow.github.io/redeNeural/index.html?lng="+lng;;
+		};
+		s=document.createElement('script');
+		s.src='https://redeneural-coboinashadow.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+	}
+	else{
+		if(lng=='tinyCC')extensao='c';
+		if(lng=='nodeJs')extensao='js';
+		if(lng=='python')extensao='py';
+		if(licao=='1')main+=`<h3>Problema da Laranja</h3><div id=conteudo>Temos uma balança que nos apresenta o peso das frutas.<br><br>As laranjas pesam entre 0.082 kg e 0.092 kg<br><br>Seres humanos reconhecem facilmente uma laranja.<br>Não precisa nem pesar.<br><br>Mas essa I.A. tem apenas esse sensor.<br><br>Um programador poderia usar um <b>IF</b> para testar se a fruta está entre esses valores.<br><br>Mas a questão é treinar a I.A. para <b>ela</b> chegar a esses valores.<br><br>Por enquanto vamos programar algo para gerar 50 valores aleatórios.<br>Cada valor tem um peso e um bool.<br><b>25 desses valores</b> sao frutas quaisquer e têm peso qualquer e bool L = false;<br><b>25 desses valores</b> sao laranjas e têm peso entre 0.082 e 0.092 e bool L = true;<br><br>No próximo módulo a I.A. vai percorrrer várias vezes esses valores e vai <b>inferir</b> os limites 0.082 e 0.092<br><br>Os limites serão encontrados pela I.A. (ao invés de ser dado pelo programador)<br><br>Nos outros módulos o problema vai crescer (ganhar complexidade)<br><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/geraentradas1.`+extensao+`>geraentradas1.`+extensao+`</a></div>`;
+		if(licao=='2')main+=`<h3>Bias</h3><div id=conteudo>Bias é o valor limite que serve para identificar as laranjas.<br><br>A gente já sabe que a faixa de peso das laranjas é entre 0.082 e 0.092<br>Mas a nossa I.A. ainda não sabe.<br><br>Ela vai testar várias vezes várias frutas e calibrar o seu <b>bias</b>.<br><br>Ela está começando a aprender.<br><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/treina1.`+extensao+`>treina1.`+extensao+`</a></div>`;
+		if(licao=='3')main+=`<h3>Peso e Altura</h3><div id=conteudo>Se fosse o caso de nossa I.A. ter dois sensores a solução apresentada até agora poderia falhar.<br><br>Para resolver a questão com múltiplos valores na entrada usa-se redes neurais com camadas.<br><br>Na continuidade do desenvolvimento dessa I.A. vamos encontrar um padrão entre muitos sensores.<br><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/geraentradas2.`+extensao+`>geraentradas2.`+extensao+`</a><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/treina2.`+extensao+`>treina2.`+extensao+`</a></div>`;
+		if(licao=='4')main+=`<h3>Testes</h3><div id=conteudo>A rede neural identificou um padrão.<br><br>Agora com um <b>if</b> é possível determinar se a fruta é uma laranja.<br><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/testes1.`+extensao+`>testes1.`+extensao+`</a></div>`;
+		if(licao=='5')main+=`<h3>Imagens</h3><div id=conteudo>Já está no ponto de começar a procurar padrões em fontes mais realistas.<br><br>O plano é gerar varias imagens de mesmo tamanho com fundo branco e uma figura geometrica impressa.<br><br>A rede neural deverá reconhecer se no arquivo está impresso um quadrado ou um círculo.</div>`;
+		if(licao=='6')main+=`<h3>.bmp</h3><div id=conteudo>É possível gerar as imagens requeridas com programação.<br><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/geraentradas3.`+extensao+`>geraentradas3.`+extensao+`</a><br></div>`;
+		if(licao=='7')main+=`<h3>Treinando a Rede</h3><div id=conteudo>O arquivo <a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/treina3.`+extensao+`>treina3.`+extensao+`</a> fatia cada uma das imagens em vários pedacinhos.<br>Cada pedacinho é um int.<br><br>Para a rede neural funcionar esses int são tratados como entradas.<br>A rede neural procura um padrão neles.</div>`;
+		if(licao=='8')main+=`<h3>Teste Final</h3><div id=conteudo>A rede neural identifica um padrão.<br><br>Agora basta um <b>if</b><br>(uma comparação numérica)<br>para determinar se na imagem está impresso um círculo.<br><br><a target=_blank href=https://github.com/coboinashadow/redeNeural/blob/main/`+lng+`/testes2.`+extensao+`>testes2.`+extensao+`</a></div>`;
+		if(licao=='9')main+=`<h3>Generativa</h3><div id=conteudo>Com a rede treinada é possivel tentar algo a mais:<br>Um ciclo de geração de bytes aleatórios sendo testados até que se enquadre nos limites definidos.</div>`;
+		if(licao=='10')main+=`<h3>Próximos Passos</h3><div id=conteudo>Não é tão simples, mas deve ser possível gerar uma rede neural que diferencie formas geométricas (ou símbolos) (ou letras) em arquivos jpg.</div>`;
+		main+=`<span id="voltar" onclick="location='index.html?lng=`+lng+`';">voltar</span><span id="home" onclick="location='index.html';">home</span>`;
+	}
+}
+document.getElementById('main').innerHTML=main;
+</script>
+</html>
