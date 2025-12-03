@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Programando I.A. desde o Rascunho</title>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@700&display=swap" rel="stylesheet">
+	<link href="../tutorial.css" rel="stylesheet">
+</head>
+<body>
+<header onclick="location.href='../index.html';">
+  <div id=logo>IA</div>
+  <div>
+	<h1>Programando IA desde o Rascunho</h1>
+	<p>desde o zero — tutorial prático para começar</p>
+  </div>
+</header>
+
+<a href=tutorial/licao1.html>probleminha</a> (15 loc)<br>
+<a href=tutorial/licao2.html>bias</a> (11 loc)<br>
+<a href=tutorial/licao3.html>peso e altura</a> (28 loc) (38 loc)<br>
+<a href=tutorial/licao4.html>testes</a> (25 loc)<br>
+<a href=tutorial/licao5.html>imagens</a><br>
+<a href=tutorial/licao6.html>bmp</a> (50 loc)<br>
+<a href=tutorial/licao7.html>treinando a rede</a> (16 loc)<br>
+<a href=tutorial/licao8.html>teste final</a> (24 loc)<br>
+<a href=tutorial/licao9.html>generativa</a><br>
+<a href=tutorial/licaop.html>próximos passos</a><br>
+
+<br><br><center><select onchange="location.href=this.value;">
+<option value="../tinyCC/index.html">TinyCC</option>
+<option value="../nodeJs/index.html" selected>NodeJs</option>
+<option value="../python/index.html">Python</option>
+<option value="https://coboinashadow.github.io/tutoriais">Outros Tutoriais</option>
+<option value="https://coboinashadow.github.io/Portfolio">Portfolio Dev</option>
+</select></center><br>
+
+<br><br><div id='disqus_thread'></div>
+
+<span id="voltar" onclick="(document.head || document.body).appendChild(s); this.style.display = 'none';">comentarios</span>
+
+</body>
+<script>
+disqus_config = function () {
+	this.page.url = "https://coboinashadow.github.io/redeNeural/nodeJs/index.html";
+	this.page.identifier = "https://coboinashadow.github.io/redeNeural/nodeJs/index.html";
+};
+
+s = document.createElement('script');
+s.src = 'https://redeneural-coboinashadow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+</script>
+</html>
