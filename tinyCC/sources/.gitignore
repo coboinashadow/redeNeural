@@ -1,0 +1,7 @@
+*.exe
+a.out
+entradas1.txt
+entradas2.txt
+bias1.txt
+bias2.txt
+imagens/*
